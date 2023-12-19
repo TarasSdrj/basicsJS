@@ -65,3 +65,22 @@ console.log(new Date().toUTCString());
 let $uri = "/sum?nums=1,2,3";
 let statusMessage = $uri.match(/\/sum/);
 console.log(statusMessage);
+const { error } = require("console");
+const rFile = require("fs");
+let text = rFile.readFileSync("passwords.txt", "utf-8");
+console.log(text);
+let fc = rFile.readFile("passwords.txt", "utf-8", (error, data) => {
+  //console.log(typeof data);
+});
+
+//console.log(Object.keys(rFile));
+let userName = text.split(":")[0];
+let parol =  text.split(":")[1]
+console.log(userName);
+console.log(parol);
+let body = "login=student&password=12345";
+let bodyLogin = body.split("&")[0].replace("login=", "");
+console.log(bodyLogin);
+let bodyPass = body.split("&")[1].replace("password=", "");
+console.log(bodyPass);
+
